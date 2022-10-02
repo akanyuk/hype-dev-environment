@@ -1,0 +1,48 @@
+version: '3.7'
+services:
+
+  nginx:
+    image: nginx
+    ports:
+      - '80:80'
+    volumes:
+      - './docker/nginx/nginx.conf:/etc/nginx/nginx.conf'
+      - './public_html:/opt/www'
+
+  php:
+    build:
+      context: ./docker/php
+    volumes:
+      - './public_html:/opt/www'
+
+  mysql:
+    image: mysql
+    command: mysqld --sql_mode=""
+    volumes:
+      - 'mysql-storage:/var/lib/mysql'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=hype
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+
+  maildev:
+    image: maildev/maildev
+    command: bin/maildev --web 80 --smtp 25 --hide-extensions STARTTLS
+    ports:
+      - "1080:80"
+
+  searchd:
+    image: manticoresearch/manticore
+    volumes:
+      - ./docker/manticoresearch:/etc/manticoresearch
+      - manticoresearch-storage:/var/lib/manticore
+    environment:
+      - QUERY_LOG_TO_STDOUT=true
+
+volumes:
+  mysql-storage: null
+  manticoresearch-storage: null

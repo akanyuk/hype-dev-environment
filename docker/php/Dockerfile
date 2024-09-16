@@ -13,8 +13,8 @@ RUN docker-php-ext-configure gd --with-jpeg
 RUN docker-php-ext-install gd
 
 # cURL
-RUN apt-get install -y libcurl3-dev
-RUN docker-php-ext-install curl
+#RUN apt-get install -y libcurl3-dev
+#RUN docker-php-ext-install curl
 
 # MySQL
 RUN docker-php-ext-install mysqli pdo_mysql

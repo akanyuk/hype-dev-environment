@@ -66,17 +66,15 @@ $config['path']['offset_request_url'] = '0';
 $config['compress']['css']['merge'] = true;
 $config['compress']['js']['merge']  = true;
 
-$config['sys']['mail']['type']             = 'smtp';                 // Какой тип отправки использовать
-$config['sys']['mail']['from_email']       = 'retroscene.bot@yandex.ru';  // Мыло с которого отправляются все уведомления
-$config['sys']['mail']['from_name']        = 'HypeBot';              // Имя с которого отправляются все уведомления
-$config['sys']['mail']['charset']          = 'UTF-8';                // Какую кодировку использовать в письмах
-$config['sys']['mail']['smtp']['host']     = 'smtp.yandex.ru';      // Настройки SMTP - хост
-$config['sys']['mail']['smtp']['port']     = 465;                    // Настройки SMTP - порт
-//$config['sys']['mail']['smtp']['user']     = 'boot@retroscene.org';  // Настройки SMTP - пользователь
-//$config['sys']['mail']['smtp']['password'] = '2KUvs@Na';             // Настройки SMTP - пароль
-$config['sys']['mail']['smtp']['user']     = 'retroscene.bot';  // Настройки SMTP - пользователь
-$config['sys']['mail']['smtp']['password'] = 'mlbzorhkgssuebaz';             // Настройки SMTP - пароль
-$config['sys']['mail']['smtp']['secure']   = 'ssl';                  // Настройки SMTP - протокол шифрования: tls, ssl
-$config['sys']['mail']['smtp']['auth']     = true;                   // Использовать авторизацию при отправке
+$config['sys']['mail']['type']             = 'smtp';                 	// Какой тип отправки использовать
+$config['sys']['mail']['from_email']       = 'retroscene.bot@yandex.ru';// Мыло с которого отправляются все уведомления
+$config['sys']['mail']['from_name']        = 'HypeBot';              	// Имя с которого отправляются все уведомления
+$config['sys']['mail']['charset']          = 'UTF-8';                	// Какую кодировку использовать в письмах
+$config['sys']['mail']['smtp']['host']     = 'maildev';      		// Настройки SMTP - хост
+$config['sys']['mail']['smtp']['port']     = 25;                    	// Настройки SMTP - порт
+$config['sys']['mail']['smtp']['user']     = 'hypebot';  		// Настройки SMTP - пользователь
+$config['sys']['mail']['smtp']['password'] = '';             		// Настройки SMTP - пароль
+$config['sys']['mail']['smtp']['secure']   = 'ssl';                  	// Настройки SMTP - протокол шифрования: tls, ssl
+$config['sys']['mail']['smtp']['auth']     = true;                   	// Использовать авторизацию при отправке
 
 return $config;
